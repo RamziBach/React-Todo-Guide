@@ -2,8 +2,6 @@
 
 # 100 React projects in 100 days challenge!
 
----
-
 #### Project 1: Todo App
 
 Create, read, update and delete. Local storage.
