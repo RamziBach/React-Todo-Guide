@@ -40,12 +40,6 @@ npx create-react-app my-app
 npm i uuid
 ```
 
-- `animate.css` _optional_
-
-```bash
-npm i animate.css
-```
-
 ### HTML
 
 ```html
@@ -150,7 +144,7 @@ export default Todo;
 - Add state :point_down:
 
 ```javascript
-const [items, setItems] = useState([]); // Empty array important
+const [items, setItems] = useState([]); // Empty array
 const [text, setText] = useState('');
 const [isEditing, setIsEditing] = useState(false);
 const [editId, setEditId] = useState('');
@@ -255,14 +249,19 @@ export default Todo;
 - Write functions :point_down: (Hard part...)
 
 ```javascript
+// Setting state to the input value dynamically on every change
 const handleChange = e => setText(e.target.value);
 ```
 
 ```javascript
 const handleSubmit = e => {
-  e.preventDefault();
-  if (text.length === 0) return;
+  e.preventDefault(); // Prevent default submit behavior
+  if (text.length === 0) return; // Stops submission if nothing is typed in input
   if (isEditing) {
+    // Set your state immutably
+    // This code will execute when we are editing
+    // It will replace our items state with what it had before
+    // and make the edit.
     setItems(prevState => {
       const newItems = [...prevState];
       const index = newItems.findIndex(item => item.id === editId);
@@ -272,8 +271,10 @@ const handleSubmit = e => {
     setIsEditing(false);
     setText('');
     setEditId('');
-    return;
+    return; // Leave function after edit
   }
+  // Set your state immutably
+  // Code here will add new items to state
   setItems(prevState => [
     ...prevState,
     { id: uuidv4(), text, isComplete: false },
@@ -290,12 +291,13 @@ const handleClear = () => {
     setEditId('');
     return;
   }
-  setItems([]);
+  setItems([]); // Deletes everything in our state
 };
 ```
 
 ```javascript
 const handleDelete = id => {
+  // This returns the previous state but without the index we select.
   setItems(prevState => prevState.filter(item => item.id !== id));
 };
 ```
@@ -304,13 +306,14 @@ const handleDelete = id => {
 const handleEdit = (id, text) => {
   setIsEditing(true);
   setText(text);
-  setEditId(id);
+  setEditId(id); // This is used in handleSubmit
 };
 ```
 
 ```javascript
 const handleIsComplete = (id, text, isComplete) => {
   if (isComplete) {
+    // Immutability
     setItems(prevState => {
       const newItems = [...prevState];
       const index = newItems.findIndex(item => item.id === id);
@@ -319,6 +322,7 @@ const handleIsComplete = (id, text, isComplete) => {
     });
     return;
   }
+  // Immutability
   setItems(prevState => {
     const newItems = [...prevState];
     const index = newItems.findIndex(item => item.id === id);
