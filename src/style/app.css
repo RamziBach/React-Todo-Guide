@@ -1,0 +1,243 @@
+@import '../components/header/header.css';
+@import '../components/todo/todo.css';
+
+:root {
+  --clr-dark: #101820;
+  --clr-light: #eef2f6;
+  --clr-accent: #61dafb;
+
+  --ff-poppins: 'Poppins', sans-serif;
+
+  --fs-logo: 6rem;
+  --fs-h1: 4.5rem;
+  --fs-h2: 3.5rem;
+  --fs-h3: 2.5rem;
+  --fs-h4: 1.5rem;
+  --fs-h5: 1.125rem;
+  --fs-body: 1rem;
+  --fs-small: 0.9rem;
+}
+
+@media (max-width: 1600px) {
+  :root {
+    --fs-logo: 4.5rem;
+    --fs-h1: 3rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.25rem;
+    --fs-h4: 1rem;
+    --fs-h5: 0.975rem;
+    --fs-body: 0.875rem;
+    --fs-small: 0.775rem;
+  }
+}
+
+@media (max-width: 425px) {
+  :root {
+    --fs-logo: 2.7rem;
+    --fs-h1: 2rem;
+    --fs-h2: 1.8rem;
+    --fs-h3: 1rem;
+    --fs-h4: 0.8rem;
+    --fs-h5: 0.775rem;
+    --fs-body: 0.675rem;
+    --fs-small: 0.575rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  word-spacing: 1.4px;
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-body);
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  display: inline-block;
+  background: none;
+  cursor: pointer;
+  font-family: var(--ff-poppins);
+  text-transform: capitalize;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  display: inline-block;
+  background: none;
+  cursor: pointer;
+  font-family: var(--ff-poppins);
+  text-transform: capitalize;
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-family: var(--ff-poppins);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-family: var(--ff-poppins);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-family: var(--ff-poppins);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+  font-family: var(--ff-poppins);
+}
+
+h5 {
+  font-size: var(--fs-h5);
+  font-family: var(--ff-poppins);
+}
+
+p {
+  word-spacing: 1.4px;
+  font-family: var(--ff-poppins);
+  font-weight: 300;
+}
+
+.btn-bg {
+  font-size: var(--fs-h5);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 1em 2.25em;
+  color: var(--clr-dark);
+  background-color: var(--clr-accent);
+  border: 1px solid var(--clr-accent);
+  transition: all 0.3s;
+}
+
+.btn-bg:hover,
+.btn-bg:focus {
+  background-color: var(--clr-light);
+  border: 1px solid var(--clr-light);
+}
+
+.btn-border {
+  font-size: var(--fs-h5);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 1em 2.25em;
+  color: var(--clr-accent);
+  background-color: transparent;
+  border: 1px solid var(--clr-accent);
+  transition: all 0.3s;
+}
+
+.btn-border:hover,
+.btn-border:focus {
+  background-color: rgba(97, 218, 251, 0.1);
+}
+
+.btn {
+  font-size: var(--fs-body);
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--clr-light);
+  background-color: transparent;
+}
+
+.menu-btn_border {
+  font-size: var(--fs-small);
+  font-weight: 400;
+  text-decoration: none;
+  padding: 1em 2.25em;
+  min-width: 9em;
+  color: var(--clr-light);
+  background-color: transparent;
+  border: 1px solid var(--clr-accent);
+  transition: all 0.3s;
+}
+
+.menu-btn_border:hover,
+.menu-btn_border:focus {
+  background-color: rgba(50, 72, 95, 0.3);
+}
+
+.menu-btn_bg {
+  font-size: var(--fs-small);
+  font-weight: 400;
+  text-decoration: none;
+  padding: 1em 2.25em;
+  min-width: 9em;
+  color: var(--clr-light);
+  background-color: var(--clr-accent);
+  transition: all 0.3s;
+}
+
+.menu-btn_bg:hover,
+.menu-btn_bg:focus {
+  background-color: rgba(50, 72, 95, 0.8);
+}
+
+.lg-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.md-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sm-container {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.lg_section-spacing {
+  margin-bottom: 25rem;
+}
+
+.section-spacing {
+  margin-bottom: 20rem;
+}
+
+.md_section-spacing {
+  margin-bottom: 10rem;
+}
+
+.smMD_section-spacing {
+  margin-bottom: 7.5rem;
+}
+
+.sm_section-spacing {
+  margin-bottom: 5rem;
+}
+
+.logo {
+  font-size: var(--fs-logo);
+}
