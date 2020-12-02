@@ -15,6 +15,26 @@ Add todo items to your list and have a productive day.
 <img src="https://i.gyazo.com/c6c1cc5e8f761ab32f32a911cb01d87a.gif" alt="todo gif" width="80%" />
 </div>
 
+## Installation
+
+1. Clone this repo
+
+```bash
+git clone https://github.com/RamziBach/Todo.git
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Start development server
+
+```bash
+npm start
+```
+
 ## Quick Overview
 
 `Creating` and `Updating` _onSubmit_.
