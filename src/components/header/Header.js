@@ -31,7 +31,7 @@ const Header = () => {
       >
         <div className="lg-container">
           <h2 className="mobile-nav-title">
-            100 <span>React</span> projects <br /> in 100 days challenge!
+            100 <span>React</span> projects!
           </h2>
           <h3>1. Todo App</h3>
           <h3>
